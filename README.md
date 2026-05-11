@@ -24,6 +24,7 @@
 
 * 2：index.js+package.json上传至域名文件夹内的public_html目录
    编辑index.js，修改2个变量：UUID和域名
+  ps：如果可以的话，index.js文件可以用js混淆。
 
 * 3：返回进入面板主页--附加功能--Setup Node.js APP
    
@@ -50,8 +51,5 @@
 * 5：报错后无法删除app的详细解决步骤：见视频教程 https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
 
   * （可选）Cloudflare Workers保活方案：
-
-  https://github.com/eishare/keep-alive-DirectDdmin-Node.js
-
 保活需要cloudflare创建一个以hello word 为模板的pages，并将vless-alive的代码复制到pages的代码编辑中，
 需要修改域名加uuid，并且在设置里添加触发事件：设置每30分钟触发一次。
