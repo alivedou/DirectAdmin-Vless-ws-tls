@@ -5,13 +5,15 @@
   "main": "index.js",
   "author": "adou",
   "license": "MIT",
+
   "dependencies": {
-    "ws": "^8.17.0",
-    "node-fetch": "^2.7.0"
+    "ws": "^8.17.0"
   },
+
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
+
   "scripts": {
     "start": "node index.js"
   }
