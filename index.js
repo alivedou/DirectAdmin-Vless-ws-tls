@@ -14,7 +14,7 @@ const LISTEN_PORT = Number(process.env.PORT) || 0;
 // =============== TXT 优选地址 ================================
 // ============================================================
 const DOMAIN_TXT_URLS = [
-    "https://bestcf.pages.dev/gslege/SG.txt",                                                  //替换"双引号中的优选域名地址"
+    "https://bestcf.pages.dev/gslege/SG.txt",                                                  //可选项：替换"双引号中的大佬更新优选域名地址"，不填就默认
     "https://bestcf.pages.dev/tiancheng/sg.txt",
     "",
 ];
