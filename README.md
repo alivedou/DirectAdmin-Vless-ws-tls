@@ -41,3 +41,6 @@
 * 4：浏览器访问 域名/UUID，可见节点链接地址
   
 * 5：报错后无法删除app的详细解决步骤：见视频教程 https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
+
+保活需要cloudflare创建一个以hello word 为模板的pages，并将vless-alive的代码复制到pages的代码编辑中，
+需要修改域名加uuid，并且在设置里添加触发事件：设置每30分钟触发一次。
