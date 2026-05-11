@@ -15,6 +15,11 @@ const DOMAIN_TXT_URLS = [
     ""
 ];                                                                                      //3 添加或修改双引号中的优选域名text，没有就空着
 
+
+// ============================================================
+// =============== 模块加载区 ================================
+// ============================================================
+
 async function getBestDomains() {
     try {
 
@@ -44,7 +49,12 @@ for (const url of DOMAIN_TXT_URLS) {
         console.error("获取域名列表失败:", error);
 
         return [
-            "www.visa.cn"
+    "www.visa.cn",
+    "www.shopify.com",
+    "store.ubi.com",
+    "www.wto.org",
+    "time.is",
+    "www.udemy.com",
         ];
     }
 }
