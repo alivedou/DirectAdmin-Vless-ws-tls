@@ -248,14 +248,14 @@ wss.on("connection", (ws) => {
         tcp.on("error", () => {
             try {
                 ws.close();
-            } catch {}
+            } catch (error) {}
         });
     });
 
     ws.on("close", () => {
         try {
             tcp && tcp.destroy();
-        } catch {}
+        } catch (error) {}
     });
 
     ws.on("error", () => {});
