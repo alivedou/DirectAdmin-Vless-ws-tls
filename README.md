@@ -28,7 +28,7 @@ https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
 
   可选项：
   注释3处的**优选订阅**。
-  添加优选订阅链接，在浏览器输入https://BestCF.pages.dev在优选域名栏下复制xxx.txt链接，替换掉index.js注释3处的文本，可填多个地址，如果三个不够的话，可以自己往后加格式一致即可。
+  添加优选订阅链接，在浏览器输入https://BestCF.pages.dev 在优选域名栏下复制xxx.txt链接，替换掉index.js注释3处的文本，可填多个地址，如果三个不够的话，可以自己往后加格式一致即可。
   
   ps：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在上面的网页链接也可以找到。
 
