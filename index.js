@@ -1,5 +1,11 @@
-process.on("uncaughtException", function () {});
-process.on("unhandledRejection", function () {});
+
+process.on("uncaughtException", function (err) {
+    console.log(err);
+});
+
+process.on("unhandledRejection", function (err) {
+    console.log(err);
+});
 
 // ====== 只修改两个核心变量 UUID/DOMAIN ======
 const UUID = (process.env.UUID || "b8b2b871-c722-4fec-8fb3-632ca3c51a0a").trim();
@@ -21,6 +27,7 @@ const DOMAIN_TXT_URLS = [
 // ============================================================
 // =============== 模块加载区 ================================
 // ============================================================
+const fetch = require("node-fetch");
 const http = require("http");
 const net = require("net");
 const wsModule = require("ws");
@@ -29,7 +36,7 @@ const WebSocketServer = wsModule.WebSocketServer;
 const createWebSocketStream = wsModule.createWebSocketStream;
 
 // ============================================================
-// =============== 动态读取 TXT ===============================
+// =============== 动态读取TXT内优选ip===============================
 // ============================================================
 function getBestDomains() {
 
