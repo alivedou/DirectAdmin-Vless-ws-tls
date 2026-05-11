@@ -63,8 +63,8 @@ function getBestDomains() {
 
 
 					.map(function (line) {
-    return line.replace(/^\uFEFF/, "").trim();
-})
+   			 return line.replace(/^\uFEFF/, "").trim();
+			})
 			.filter(function (line) {
 				return line.length > 0;
 			})
