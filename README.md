@@ -4,7 +4,7 @@
 
 易分享大佬的源项目地址：https://github.com/eishare/DirectAdmin-Vless-ws-tls
 
-大佬的实操视频：https://youtu.be/nXbSRIvLQhg?si=QZPlBoAbHjX3idRC
+大佬的实操视频在油管，需要油管搜索@easysharing，视频按照最新排序，标题为【最新精简+优化】免费虚拟主机创建+部署全流程。
 
 ### Vless+ws+tls 自适应端口+多优选域名+CF保活方案 说明：
 
@@ -63,7 +63,7 @@
   做完这些后，重新部署1-4。
 
 
-如果实在看不懂我说的文字版，可以去看大佬的视频教程 https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
+如果实在看不懂我说的文字版，需要去我上面推荐的油管频道看视频。
 
   * （进阶可选）
   * 1:Cloudflare Workers保活方案：
