@@ -1,5 +1,6 @@
+```javascript id="h7m2ka"
 // ============================================================
-// ================= 异常捕获（防止程序崩溃） ==================
+// ================= 异常捕获（防止崩溃） ======================
 // ============================================================
 
 process.on("uncaughtException", function (err) {
@@ -14,37 +15,36 @@ process.on("unhandledRejection", function (err) {
 // ================= 核心配置区域 ==============================
 // ============================================================
 
-// UUID（客户端密钥）
+// UUID（客户端ID）
 const UUID = (
     process.env.UUID ||
     "b8b2b871-c722-4fec-8fb3-632ca3c51a0a"
 ).trim();
 
-// 你的域名
+// 域名
 const DOMAIN = (
     process.env.DOMAIN ||
     "web.945.ccwu.cc"
 ).trim();
 
-// 节点显示名称
+// 节点名称
 const NAME = "DirectAdmin-adou";
 
-// 面板自动分配端口
+// 自动监听端口
 const LISTEN_PORT =
-    Number(process.env.PORT) || 0;
+    Number(process.env.PORT) || 3000;
 
 // ============================================================
-// ================= TXT 优选域名地址 ==========================
+// ================= TXT 地址 =================================
 // ============================================================
 
-// 支持多个 TXT 地址
+// 支持多个 TXT
 const DOMAIN_TXT_URLS = [
 
-    // 新加坡优选
     "https://bestcf.pages.dev/gslege/SG.txt",
 
-    // 可继续添加更多TXT
     "",
+
     ""
 ];
 
@@ -53,6 +53,9 @@ const DOMAIN_TXT_URLS = [
 // ============================================================
 
 const http = require("http");
+
+const https = require("https");
+
 const net = require("net");
 
 const wsModule = require("ws");
@@ -67,8 +70,36 @@ const createWebSocketStream =
 // ================= WS 路径 ==================================
 // ============================================================
 
-// 最终路径：/UUID
 const WS_PATH = "/" + UUID;
+
+// ============================================================
+// ================= 获取 TXT 内容 =============================
+// ============================================================
+
+function fetchText(url) {
+
+    return new Promise(function (resolve, reject) {
+
+        https.get(url, function (res) {
+
+            let data = "";
+
+            res.on("data", function (chunk) {
+
+                data += chunk;
+            });
+
+            res.on("end", function () {
+
+                resolve(data);
+            });
+
+        }).on("error", function (err) {
+
+            reject(err);
+        });
+    });
+}
 
 // ============================================================
 // ================= 读取 TXT 并生成节点 =======================
@@ -78,65 +109,36 @@ async function getVlessLinks() {
 
     try {
 
-        // 存储所有节点
         let links = [];
 
         // 遍历所有 TXT
         for (const url of DOMAIN_TXT_URLS) {
 
-            // 跳过空URL
+            // 跳过空地址
             if (!url || !url.trim()) {
                 continue;
             }
 
             try {
 
-                console.log("开始读取:", url);
-
-                // ====================================================
-                // 获取 TXT
-                // ====================================================
-
-                const response = await fetch(url);
-
                 console.log(
-                    "状态码:",
-                    response.status
+                    "开始读取:",
+                    url
                 );
 
-                // 请求失败
-                if (!response.ok) {
-
-                    console.log(
-                        "TXT读取失败"
-                    );
-
-                    continue;
-                }
-
-                // 获取文本
+                // 获取 TXT 内容
                 const text =
-                    await response.text();
+                    await fetchText(url);
 
-                // ====================================================
-                // 逐行处理 TXT
-                // ====================================================
-
+                // 按行分割
                 const lines = text
-
-                    // 删除 Windows 换行
                     .replace(/\r/g, "")
-
-                    // 按行分割
                     .split("\n");
 
-                // ====================================================
                 // 遍历每一行
-                // ====================================================
-
                 for (let line of lines) {
 
-                    // 删除 BOM + 空格
+                    // 清理空格/BOM
                     line = line
                         .replace(/^\uFEFF/, "")
                         .trim();
@@ -147,18 +149,18 @@ async function getVlessLinks() {
                     }
 
                     // =================================================
-                    // 解析格式：
+                    // 格式：
                     // xxx.com:443#备注
                     // =================================================
 
                     const parts =
                         line.split("#");
 
-                    // 地址部分
+                    // 地址
                     const address =
                         parts[0].trim();
 
-                    // 备注部分
+                    // 备注
                     const remark =
                         parts[1]
                         ? parts[1].trim()
@@ -182,7 +184,9 @@ async function getVlessLinks() {
                         "&type=ws" +
                         "&host=" + DOMAIN +
                         "&path=" +
-                        encodeURIComponent(WS_PATH) +
+                        encodeURIComponent(
+                            WS_PATH
+                        ) +
 
                         "#" +
 
@@ -196,15 +200,15 @@ async function getVlessLinks() {
             } catch (e) {
 
                 console.log(
-                    "TXT读取异常:",
+                    "TXT读取失败:",
                     e
                 );
             }
         }
 
-        // ========================================================
+        // ====================================================
         // 去重
-        // ========================================================
+        // ====================================================
 
         links = links.filter(
             function (v, i, a) {
@@ -215,13 +219,19 @@ async function getVlessLinks() {
             }
         );
 
-        // ========================================================
-        // 如果一个都没读取到
-        // ========================================================
+        console.log(
+            "最终节点数量:",
+            links.length
+        );
+
+        // ====================================================
+        // 默认节点
+        // ====================================================
 
         if (links.length === 0) {
 
             return [
+
                 "vless://" +
                 UUID +
                 "@www.visa.cn:443" +
@@ -233,28 +243,41 @@ async function getVlessLinks() {
                 "&type=ws" +
                 "&host=" + DOMAIN +
                 "&path=" +
-                encodeURIComponent(WS_PATH) +
+                encodeURIComponent(
+                    WS_PATH
+                ) +
 
                 "#Default"
             ];
         }
-
-        console.log(
-            "最终节点数量:",
-            links.length
-        );
 
         return links;
 
     } catch (e) {
 
         console.log(
-            "总异常:",
+            "getVlessLinks错误:",
             e
         );
 
         return [
-            "读取失败"
+
+            "vless://" +
+            UUID +
+            "@www.visa.cn:443" +
+
+            "?encryption=none" +
+            "&security=tls" +
+            "&sni=" + DOMAIN +
+            "&fp=chrome" +
+            "&type=ws" +
+            "&host=" + DOMAIN +
+            "&path=" +
+            encodeURIComponent(
+                WS_PATH
+            ) +
+
+            "#Error"
         ];
     }
 }
@@ -266,10 +289,7 @@ async function getVlessLinks() {
 const server =
 http.createServer(async function (req, res) {
 
-    // ========================================================
     // 首页
-    // ========================================================
-
     if (req.url === "/") {
 
         res.writeHead(200, {
@@ -287,17 +307,14 @@ http.createServer(async function (req, res) {
         );
     }
 
-    // ========================================================
     // 节点页面
-    // ========================================================
-
     if (req.url.startsWith(WS_PATH)) {
 
         // 获取节点
         const links =
             await getVlessLinks();
 
-        // 合并输出
+        // 输出文本
         const txt =
             links.join("\n\n");
 
@@ -309,10 +326,7 @@ http.createServer(async function (req, res) {
         return res.end(txt);
     }
 
-    // ========================================================
     // 404
-    // ========================================================
-
     res.writeHead(404);
 
     res.end("404 Not Found");
@@ -352,7 +366,7 @@ server.on(
             return;
         }
 
-        // 升级 WebSocket
+        // 升级 WS
         wss.handleUpgrade(
             req,
             socket,
@@ -381,13 +395,12 @@ wss.on(
 
         let tcp = null;
 
-        // 首包处理
         ws.once(
             "message",
 
             function (msg) {
 
-                // 数据异常
+                // 数据校验
                 if (
                     !Buffer.isBuffer(msg) ||
                     msg.length < 18
@@ -523,7 +536,7 @@ wss.on(
                     }
                 );
 
-                // TCP 错误
+                // TCP错误
                 tcp.on(
                     "error",
 
@@ -539,7 +552,7 @@ wss.on(
             }
         );
 
-        // WS 关闭
+        // WS关闭
         ws.on(
             "close",
 
@@ -555,7 +568,7 @@ wss.on(
             }
         );
 
-        // WS 错误
+        // WS错误
         ws.on(
             "error",
 
@@ -577,3 +590,4 @@ console.log(
     "Server Started:",
     LISTEN_PORT
 );
+```
