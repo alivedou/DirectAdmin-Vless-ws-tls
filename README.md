@@ -55,10 +55,10 @@
 * 4：浏览器访问 域名/UUID，可见节点链接地址，可选择将这个  域名/UUID 直接导入到 v2rayN新的分组的中，也可复制下面的订阅倒入到2rayN已有分组。
   
 * 5：报错后无法删除app的详细解决步骤：
-  先将原域名a.example.com重命名为b.example，
-  然后再文件夹管理里面根目录找到venv/domains，删除里面原有的名为a.example.com的文件夹，
+  先将原域名a.example.com重命名为b.example
+  然后在文件夹管理里面根目录找到venv/domains，删除里面原有的名为a.example.com的文件夹，
   再返回附件里面的nodejs删除刚才部署的application应用，点击删除后需要刷新几次才会显示真正删除，
-  除此之外，还建议去到文件夹domains将b.example.com/public_html上一个应用用运行的日志删掉，
+  除此之外，还建议去到文件夹domains将b.example.com/public_html上一个应用运行的残留的文件删掉，
   最后重新将域名b.example.com改回a.example.com。
   做完这些后，重新部署1-4。
 
