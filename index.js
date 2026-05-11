@@ -6,17 +6,32 @@ const UUID = (process.env.UUID || "abcd1eb2-1c20-345a-96fa-cdf394612345").trim()
 const DOMAIN = (process.env.DOMAIN || "abc.domain.dpdns.org").trim();                    // 替换"双引号中的完整域名"
  
 // Panel 配置
-const NAME = "DirectAdmin-easyshare";
+const NAME = "DirectAdmin-adou";
 const LISTEN_PORT = Number(process.env.PORT) || 0;     // 自适应端口
 
-const BEST_DOMAINS = [
-    "www.visa.cn",
-    "www.shopify.com",
-    "store.ubi.com",
-    "www.wto.org",
-    "time.is",
-    "www.udemy.com",
-];
+const DOMAIN_TXT_URL = "https://bestcf.pages.dev/gslege/SG.txt";                        //添加或修改双引号中的优选地址
+
+async function getBestDomains() {
+    try {
+        const response = await fetch(DOMAIN_TXT_URL);
+        const text = await response.text();
+
+        return text
+            .split("\n")
+            .map(line => line.trim())
+            .filter(line => line.length > 0);
+    } catch (error) {
+        console.error("获取域名列表失败:", error);
+
+        // 备用域名
+        return [
+            "www.visa.cn",
+            "www.shopify.com"
+        ];
+    }
+}
+
+
 
 // ============================================================
 // =============== 模块加载区 ================================
@@ -33,20 +48,7 @@ const WS_PATH = `/${UUID}`;
 // ============================================================
 // =============== 生成 VLESS 节点链接函数 ====================
 // ============================================================
-function generateLink(address) {
-    return (
-        `vless://${UUID}@${address}:443` +
-        `?encryption=none&security=tls&sni=${DOMAIN}` +
-        `&fp=chrome&type=ws&host=${DOMAIN}` +
-        `&path=${encodeURIComponent(WS_PATH)}` +
-        `#${NAME}`
-    );
-}
-
-// ============================================================
-// =============== HTTP 服务 ==================================
-// ============================================================
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
     if (req.headers.upgrade) {
         res.writeHead(426);
         return res.end();
@@ -58,10 +60,16 @@ const server = http.createServer((req, res) => {
     }
 
     if (req.url === WS_PATH) {
-        let txt = "═════ EasyShare VLESS WS TLS ═════\n\n";
+
+        // 动态读取 TXT 域名列表
+        const BEST_DOMAINS = await getBestDomains();
+
+        let txt = "═════ adou VLESS WS TLS ═════\n\n";
+
         for (const d of BEST_DOMAINS) {
             txt += generateLink(d) + "\n\n";
         }
+
         txt += "节点已全部生成，可直接复制使用。\n";
 
         res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
