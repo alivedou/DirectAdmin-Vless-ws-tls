@@ -59,6 +59,12 @@
 
 如果实在看不懂我说的文字版，可以去看大佬的视频教程 https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
 
-  * （可选）Cloudflare Workers保活方案：
-保活需要cloudflare创建一个以hello word 为模板的pages，并将vless-alive的代码复制到pages的代码编辑中，
-需要修改域名加uuid，并且在设置里添加触发事件：设置每30分钟触发一次。
+  * （进阶可选）
+  * 1:Cloudflare Workers保活方案：
+  
+保活需要cloudflare创建一个以hello word 为模板的pages，并将vless-alive的代码复制到pages的代码编辑中，需要修改域名加uuid，并且在设置里添加触发事件：设置每30分钟触发一次。
+  * 2.用AI生成一个html文件，替换domain/a.example.com/public_html文件夹下的html文件用来展示网站首页。
+提示词示例如下:
+帮我生成一个完整的单文件 HTML 网站（包含 HTML、CSS 和少量 JavaScript），网站面向意大利用户，所有文字内容必须使用意大利语。
+网站主题为“保护水资源”。要求页面整体风格现代简洁环保主题，内容包含主题相关的多个图片和文章。
+
