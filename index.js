@@ -2,7 +2,10 @@
 process.on("uncaughtException", () => {});
 process.on("unhandledRejection", () => {});
 
-// ====== 只修改两个核心变量 UUID/DOMAIN ======
+
+// ====== 这里需要修改两个核心变量 UUID/DOMAIN ======
+
+
 const UUID = (process.env.UUID || "abcd1eb2-1c20-345a-96fa-cdf394612345").trim();           // 替换"双引号中的UUID"
 const DOMAIN = (process.env.DOMAIN || "abc.domain.dpdns.org").trim();                       // 替换"双引号中的完整域名"
 
@@ -14,8 +17,8 @@ const LISTEN_PORT = Number(process.env.PORT) || 0;
 // =============== TXT 优选地址 ================================
 // ============================================================
 const DOMAIN_TXT_URLS = [
-    "https://bestcf.pages.dev/gslege/SG.txt",                                                  //可选项：替换"双引号中的大佬更新优选域名地址"，不填就默认
-    "https://bestcf.pages.dev/tiancheng/sg.txt",
+    "https://bestcf.pages.dev/gslege/Cfxyz.txt",                                            //可选项：替换"双引号中的大佬更新优选域名地址",不填就留空默认.
+    "",
     "",
 ];
 
