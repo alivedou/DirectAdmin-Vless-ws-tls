@@ -6,8 +6,9 @@
   "author": "adou",
   "license": "MIT",
   "dependencies": {
-    "ws": "^8.17.0"
-  },
+    "ws": "^8.17.0",
+    "node-fetch": "^2.7.0"
+  }
   "engines": {
     "node": ">=16"
   },
