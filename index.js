@@ -31,7 +31,7 @@ const NAME = "DirectAdmin-adou";
 
 // 自动监听端口
 const LISTEN_PORT =
-    Number(process.env.PORT) || 3000;
+    Number(process.env.PORT) || 0;
 
 // ============================================================
 // ================= TXT 地址 =================================
