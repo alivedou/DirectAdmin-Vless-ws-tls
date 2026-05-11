@@ -4,7 +4,7 @@
 
 易分享大佬的源项目地址：https://github.com/eishare/DirectAdmin-Vless-ws-tls
 
-大佬的实操视频：https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz**
+大佬的实操视频：https://youtu.be/nXbSRIvLQhg?si=QZPlBoAbHjX3idRC
 
 ### Vless+ws+tls 自适应端口+多优选域名+CF保活方案 说明：
 
