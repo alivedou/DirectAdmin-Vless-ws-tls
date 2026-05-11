@@ -8,7 +8,7 @@ process.on("unhandledRejection", function (err) {
 
 // ====== 只修改两个核心变量 UUID/DOMAIN ======
 const UUID = (process.env.UUID || "b8b2b871-c722-4fec-8fb3-632ca3c51a0a").trim();
-const DOMAIN = (process.env.DOMAIN || "abc.domain.dpdns.org").trim();
+const DOMAIN = (process.env.DOMAIN || "web.945.ccwu.cc").trim();
 
 // Panel 配置
 const NAME = "DirectAdmin-adou";
