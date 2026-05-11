@@ -1,3 +1,6 @@
+
+本教程摘自大佬视频：https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
+
 ### Vless+ws+tls 自适应端口+多优选域名+CF保活方案 说明：
 
 * 最新精简版本，通用于Webfreecloud、Web.C-Servers、WebHostMost
@@ -6,9 +9,7 @@
 
 * 多区域优选域名覆盖，延迟低，网络表现优异
 
-* （可选）Cloudflare Workers保活方案：
 
-  https://github.com/eishare/keep-alive-DirectDdmin-Node.js
 -----------------------------------------------------------
 
 ### 使用方法：
@@ -41,6 +42,10 @@
 * 4：浏览器访问 域名/UUID，可见节点链接地址
   
 * 5：报错后无法删除app的详细解决步骤：见视频教程 https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
+
+  * （可选）Cloudflare Workers保活方案：
+
+  https://github.com/eishare/keep-alive-DirectDdmin-Node.js
 
 保活需要cloudflare创建一个以hello word 为模板的pages，并将vless-alive的代码复制到pages的代码编辑中，
 需要修改域名加uuid，并且在设置里添加触发事件：设置每30分钟触发一次。
