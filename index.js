@@ -2,35 +2,49 @@ process.on("uncaughtException", () => {});
 process.on("unhandledRejection", () => {});
 
 // ====== 只修改两个核心变量 UUID/DOMAIN ======
-const UUID = (process.env.UUID || "abcd1eb2-1c20-345a-96fa-cdf394612345").trim();        // 替换"双引号中的UUID"
-const DOMAIN = (process.env.DOMAIN || "abc.domain.dpdns.org").trim();                    // 替换"双引号中的完整域名"
+const UUID = (process.env.UUID || "abcd1eb2-1c20-345a-96fa-cdf394612345").trim();        // 1替换"双引号中的UUID"
+const DOMAIN = (process.env.DOMAIN || "abc.domain.dpdns.org").trim();                    // 2替换"双引号中的完整域名"
  
 // Panel 配置
 const NAME = "DirectAdmin-adou";
 const LISTEN_PORT = Number(process.env.PORT) || 0;     // 自适应端口
 
-const DOMAIN_TXT_URL = "https://bestcf.pages.dev/gslege/SG.txt";                        //添加或修改双引号中的优选地址
+const DOMAIN_TXT_URLS = [
+    "https://bestcf.pages.dev/gslege/SG.txt",
+    "",
+    ""
+];                                                                                      //3 添加或修改双引号中的优选地址
 
 async function getBestDomains() {
     try {
-        const response = await fetch(DOMAIN_TXT_URL);
-        const text = await response.text();
 
-        return text
-            .split("\n")
-            .map(line => line.trim())
-            .filter(line => line.length > 0);
+        let allDomains = [];
+
+        for (const url of DOMAIN_TXT_URLS) {
+
+            const response = await fetch(url);
+            const text = await response.text();
+
+            const domains = text
+                .split("\n")
+                .map(line => line.trim())
+                .filter(line => line.length > 0);
+
+            allDomains.push(...domains);
+        }
+
+        // 去重
+        return [...new Set(allDomains)];
+
     } catch (error) {
+
         console.error("获取域名列表失败:", error);
 
-        // 备用域名
         return [
-            "www.visa.cn",
-            "www.shopify.com"
+            "www.visa.cn"
         ];
     }
 }
-
 
 
 // ============================================================
