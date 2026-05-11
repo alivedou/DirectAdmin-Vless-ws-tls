@@ -39,10 +39,8 @@ const LISTEN_PORT =
 
 // 支持多个 TXT 地址
 const DOMAIN_TXT_URLS = [
-
     // 新加坡优选IP
     "https://bestcf.pages.dev/gslege/SG.txt",
-
     // 可继续添加更多TXT
     "",
     ""
@@ -630,4 +628,3 @@ console.log(
     "Server Started:",
     LISTEN_PORT
 );
-```
