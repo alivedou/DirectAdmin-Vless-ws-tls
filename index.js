@@ -20,18 +20,21 @@ async function getBestDomains() {
 
         let allDomains = [];
 
-        for (const url of DOMAIN_TXT_URLS) {
+for (const url of DOMAIN_TXT_URLS) {
 
-            const response = await fetch(url);
-            const text = await response.text();
+    // 跳过空地址
+    if (!url.trim()) continue;
 
-            const domains = text
-                .split("\n")
-                .map(line => line.trim())
-                .filter(line => line.length > 0);
+    const response = await fetch(url);
+    const text = await response.text();
 
-            allDomains.push(...domains);
-        }
+    const domains = text
+        .split("\n")
+        .map(line => line.trim())
+        .filter(line => line.length > 0);
+
+    allDomains.push(...domains);
+}
 
         // 去重
         return [...new Set(allDomains)];
