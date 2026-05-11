@@ -16,14 +16,14 @@ process.on("unhandledRejection", function (err) {
 
 // UUID（客户端ID）
 const UUID = (
-    process.env.UUID ||
-    "b8b2b871-c722-4fec-8fb3-632ca3c51a0a"
+    process.env.UUID || 
+    "198cc398-21dd-4bcd-af0d-84c4729a08ae"
 ).trim();
 
 // 域名
 const DOMAIN = (
     process.env.DOMAIN ||
-    "web.945.ccwu.cc"
+    "web.example.com"
 ).trim();
 
 // 节点名称
@@ -40,7 +40,7 @@ const LISTEN_PORT =
 // 支持多个 TXT
 const DOMAIN_TXT_URLS = [
 
-    "https://bestcf.pages.dev/gslege/SG.txt",
+    "https://bestcf.pages.dev/vps789/top10.txt",
 
     "",
 
