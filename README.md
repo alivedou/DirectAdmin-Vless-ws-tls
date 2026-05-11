@@ -3,13 +3,16 @@
 使其可以添加其他大佬频繁更新.txt格式的优选，获得多个优选订阅链接。
 
 易分享大佬的源项目地址：https://github.com/eishare/DirectAdmin-Vless-ws-tls
-**本教程摘自大佬易分享的视频：https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz**
+
+大佬的实操视频：https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz**
 
 ### Vless+ws+tls 自适应端口+多优选域名+CF保活方案 说明：
 
 * 最新精简版本，通用于Webfreecloud、Web.C-Servers、WebHostMost
   
 * 端口自适应，无需设置端口变量
+
+* 增加可选项：可以添加大佬收集的优选IP地址。
 
 * 多区域优选域名覆盖，延迟低，网络表现优异
 
@@ -22,7 +25,9 @@
 
 * 2：index.js+package.json上传至域名文件夹内的public_html目录
    编辑index.js，修改2个变量：UUID和域名
-   可选项：修改优选订阅地址。
+   可选项：在浏览器输入https://BestCF.pages.dev，
+  在优选ip栏下复制xxx.txt格式的文本替换掉index.js中的文本
+  
   ps：如果可以的话，index.js文件可以用js混淆。
 
 * 3：返回进入面板主页--附加功能--Setup Node.js APP
