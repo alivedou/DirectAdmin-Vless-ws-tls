@@ -11,9 +11,9 @@ const LISTEN_PORT = Number(process.env.PORT) || 0;     // 自适应端口
 
 const DOMAIN_TXT_URLS = [
     "https://bestcf.pages.dev/gslege/SG.txt",
-    "",
+    "https://bestcf.pages.dev/tiancheng/hk.txt",
     ""
-];                                                                                      //3 添加或修改双引号中的优选地址
+];                                                                                      //3 添加或修改双引号中的优选域名text，没有就空着
 
 async function getBestDomains() {
     try {
