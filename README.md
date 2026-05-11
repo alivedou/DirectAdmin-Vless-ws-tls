@@ -3,7 +3,7 @@
 使其可以添加其他大佬更新.txt格式的优选域名，获得多个优选订阅链接。
 
 部署过程可以参考易分享大佬的操作步骤，需要油管搜索@easysharing，视频按照最新排序，标题为【最新精简+优化】免费虚拟主机创建+部署全流程。
-
+https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
 ### Vless+ws+tls 自适应端口+多优选域名+CF保活方案 说明：
 
 * 最新精简版本，通用于Webfreecloud、Web.C-Servers、WebHostMost
