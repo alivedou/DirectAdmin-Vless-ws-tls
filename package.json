@@ -5,16 +5,14 @@
   "main": "index.js",
   "author": "adou",
   "license": "MIT",
-
   "dependencies": {
     "ws": "^8.17.0"
   },
-
   "engines": {
-    "node": ">=18"
+    "node": ">=16"
   },
-
   "scripts": {
     "start": "node index.js"
   }
 }
+
