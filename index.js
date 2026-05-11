@@ -1,10 +1,9 @@
-
 process.on("uncaughtException", function (err) {
-    console.log(err);
+    console.log("uncaughtException:", err);
 });
 
 process.on("unhandledRejection", function (err) {
-    console.log(err);
+    console.log("unhandledRejection:", err);
 });
 
 // ====== 只修改两个核心变量 UUID/DOMAIN ======
@@ -27,7 +26,6 @@ const DOMAIN_TXT_URLS = [
 // ============================================================
 // =============== 模块加载区 ================================
 // ============================================================
-const fetch = require("node-fetch");
 const http = require("http");
 const net = require("net");
 const wsModule = require("ws");
@@ -54,15 +52,19 @@ function getBestDomains() {
                 }
 
                 const response = await fetch(url);
-                const text = await response.text();
-
+			console.log("TXT地址:", url);
+			console.log("状态码:", response.status);
+                const text = await response.text();	
+			console.log(text);
+				
 				const domains = text
 				.replace(/\r/g, "")
 				.split("\n")
 
-			.map(function (line) {
-				return line.trim();
-						})
+
+					.map(function (line) {
+    return line.replace(/^\uFEFF/, "").trim();
+})
 			.filter(function (line) {
 				return line.length > 0;
 			})
