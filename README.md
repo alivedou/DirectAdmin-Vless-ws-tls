@@ -1,5 +1,11 @@
 
-本教程摘自大佬视频：https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
+
+
+
+
+**本教程摘自大佬易分享的视频：https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz**
+
+
 
 ### Vless+ws+tls 自适应端口+多优选域名+CF保活方案 说明：
 
