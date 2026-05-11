@@ -17,13 +17,13 @@ process.on("unhandledRejection", function (err) {
 // UUID（客户端ID）
 const UUID = (
     process.env.UUID || 
-    "198cc398-21dd-4bcd-af0d-84c4729a08ae"
+    "198cc398-21dd-4bcd-af0d-84c4729a08ae"                        //1这里替换成你自己的UUID，可以由V2rayN生成
 ).trim();
 
 // 域名
 const DOMAIN = (
     process.env.DOMAIN ||
-    "web.example.com"
+    "web.example.com"                                            //2这里替换成你自己设置的域名
 ).trim();
 
 // 节点名称
@@ -37,10 +37,10 @@ const LISTEN_PORT =
 // ================= TXT 地址 =================================
 // ============================================================
 
-// 支持多个 TXT
+// 可选项：支持多个 TXT
 const DOMAIN_TXT_URLS = [
 
-    "https://bestcf.pages.dev/vps789/top10.txt",
+    "https://bestcf.pages.dev/vps789/top10.txt",                  //3这里替换成自己优选的ip列表，或者保持这里默认即可
 
     "",
 
