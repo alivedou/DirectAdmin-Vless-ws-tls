@@ -25,7 +25,7 @@
    编辑index.js，必须修改的两个变量：
   注释1处： **UUID**  和 注释2处的： **域名**
 
-  可选项：注释3处的**优选订阅**。添加优选订阅链接，在浏览器输入https://BestCF.pages.dev，
+  可选项：注释3处的**优选订阅**。添加优选订阅链接，在浏览器输入https://BestCF.pages.dev
   在优选ip栏下复制xxx.txt格式的文本替换掉index.js中的文本
   
   ps：如果可以的话，index.js文件可以用js混淆。
