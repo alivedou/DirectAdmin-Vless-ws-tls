@@ -7,7 +7,7 @@ const UUID = (process.env.UUID || "abcd1eb2-1c20-345a-96fa-cdf394612345").trim()
 const DOMAIN = (process.env.DOMAIN || "abc.domain.dpdns.org").trim();                       // 替换"双引号中的完整域名"
 
 // Panel 配置
-const NAME = "DirectAdmin-easyshare";
+const NAME = "DirectAdmin-adou";
 const LISTEN_PORT = Number(process.env.PORT) || 0;
 
 // ============================================================
@@ -15,7 +15,7 @@ const LISTEN_PORT = Number(process.env.PORT) || 0;
 // ============================================================
 const DOMAIN_TXT_URLS = [
     "https://bestcf.pages.dev/gslege/SG.txt",                                                  //替换"双引号中的优选域名地址"
-    "",
+    "https://bestcf.pages.dev/tiancheng/sg.txt",
     "",
 ];
 
@@ -115,7 +115,7 @@ const server = http.createServer(async (req, res) => {
         // 动态获取 TXT 节点
         const BEST_DOMAINS = await getBestDomains();
 
-        let txt = "═════ EasyShare VLESS WS TLS ═════\n\n";
+        let txt = "═════ adou VLESS WS TLS ═════\n\n";
 
         for (const d of BEST_DOMAINS) {
             txt += generateLink(d) + "\n\n";
