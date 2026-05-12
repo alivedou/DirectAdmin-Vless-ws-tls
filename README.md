@@ -1,13 +1,13 @@
 前置说明
 _**必需配置：**_
 
-cloudflare账号以及拥有至少1个托管到cloudflare的域名。
+1.cloudflare账号以及拥有至少1个托管到cloudflare的域名。
 
-github账号，用于复制项目内容。
+2.github账号，用于复制项目内容。
 
-一台DirectAdmin控制的机器。
+3.一台DirectAdmin控制的机器。
 
-
+-----------------------------------------------------------
 
 本项目fork自大佬易分享的项目，在其项目上运用AI修改了代码，
 使其可以添加其他大佬更新.txt格式的优选域名，获得多个优选订阅链接。
@@ -58,7 +58,7 @@ https://BestCF.pages.dev
 如果默认数量不够，可按相同格式自行继续添加。
 
   
-  ps：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在上面的网页链接也可以找到。
+  ps：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在https://BestCF.pages.dev 也可以找到。
 
 * 3：返回进入面板主页--附加功能--Setup Node.js APP
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/cd0e850c-364c-4719-bf74-969412af4c58" />
@@ -81,7 +81,10 @@ https://BestCF.pages.dev
   * （进阶可选）
   * 1:Cloudflare Workers保活方案：
   
-保活需要cloudflare创建一个以hello word 为模板的pages，并将vless-alive的代码复制到pages的代码编辑中，需要修改域名加uuid，并且在设置里添加触发事件：设置每30分钟触发一次。
+保活需要cloudflare创建一个以hello word 为模板的pages，
+并将vless-alive的代码复制到pages的代码编辑中
+需要修改域名加uuid，（建议修改后使用代码混淆）
+并且在设置里添加触发事件：设置每30分钟触发一次
   * 2.用AI生成一个html文件，替换domain/a.example.com/public_html文件夹下的html文件用来展示网站首页。
   
 **提示词示例如下:**
