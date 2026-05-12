@@ -72,7 +72,8 @@ https://BestCF.pages.dev
   
 * 5：重新部署或报错后无法删除app的详细解决步骤：（ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
 <img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/778300c2-87c0-4ad8-9d20-d48bc61fb860" />
-做完这些后，重新部署1-4。
+
+
 如果实在看不懂我说的文字版，需要去我上面推荐的油管频道看视频。
 
   * （进阶可选）
