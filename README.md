@@ -21,7 +21,7 @@ https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
 ## 配置说明
 
 编辑 `index.js`，需修改以下内容：
-![Uploading image.png…]()
+pic/应用创建.png
 
 
 
