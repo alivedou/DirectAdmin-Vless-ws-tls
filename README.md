@@ -1,4 +1,4 @@
-<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/778300c2-87c0-4ad8-9d20-d48bc61fb860" />
+
 本项目fork自大佬易分享的项目，在其项目上运用AI修改了代码，
 使其可以添加其他大佬更新.txt格式的优选域名，获得多个优选订阅链接。
 
@@ -18,13 +18,32 @@ https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
 * 1：更新DirectAdmin面板域名，确保域名已托管至Cloudflare，并添加一条DNS记录，指向DirectAdmin
 
 * 2：index.js+package.json上传至域名文件夹内的public_html目录
-   编辑index.js，必须修改的两个变量：
-  注释1处： **UUID**
-  注释2处的： **域名**
+## 配置说明
 
-  可选项：
-  注释3处的**优选订阅**。
-  添加优选订阅链接，在浏览器输入https://BestCF.pages.dev 在优选域名栏下复制xxx.txt链接，替换掉index.js注释3处的文本，可填多个地址，如果三个不够的话，可以自己往后加，格式一致即可。
+编辑 `index.js`，需修改以下内容：
+
+### 必改项
+
+* 注释 1：`UUID`
+* 注释 2：`域名`
+
+### 可选项
+
+* 注释 3：`优选订阅`
+
+获取方式：
+
+```txt id="jcbm0t"
+浏览器访问：
+https://BestCF.pages.dev
+
+在“优选域名”栏目复制 xxx.txt 链接，
+替换 index.js 注释3处内容即可。
+```
+
+支持填写多个订阅地址。
+如果默认数量不够，可按相同格式自行继续添加。
+
   
   ps：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在上面的网页链接也可以找到。
 
@@ -53,10 +72,8 @@ https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
   
 * 5：报错后无法删除app的详细解决步骤：
 * （ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
-
+<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/778300c2-87c0-4ad8-9d20-d48bc61fb860" />
 做完这些后，重新部署1-4。
-
-
 如果实在看不懂我说的文字版，需要去我上面推荐的油管频道看视频。
 
   * （进阶可选）
