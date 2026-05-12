@@ -51,18 +51,8 @@ https://BestCF.pages.dev
   ps：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在上面的网页链接也可以找到。
 
 * 3：返回进入面板主页--附加功能--Setup Node.js APP
- 版本：22.x.x
-模式：Production
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/cd0e850c-364c-4719-bf74-969412af4c58" />
 
-路径：public_html
-文件：index.js
-
-按钮顺序：
-CREATE APPLICATION
-→ Run NPM Install
-→ Run JS script
-→ Start
-→ Run JS script
 
   
 * 4：浏览器访问（  域名/UUID  ），可见节点链接地址，可选择将这个（  域名/UUID  ）直接导入到v2rayN新的订阅分组中，也可复制下面的订阅内容导入到2rayN已有分组。
