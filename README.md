@@ -1,4 +1,4 @@
-
+<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/778300c2-87c0-4ad8-9d20-d48bc61fb860" />
 本项目fork自大佬易分享的项目，在其项目上运用AI修改了代码，
 使其可以添加其他大佬更新.txt格式的优选域名，获得多个优选订阅链接。
 
@@ -53,12 +53,8 @@ https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
   
 * 5：报错后无法删除app的详细解决步骤：
 * （ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
-先将原域名a.example.com重命名为b.example
-然后在文件夹管理里面根目录找到venv/domains，删除里面原有的名为a.example.com的文件夹，
-再返回附件里面的nodejs删除刚才部署的application应用，点击删除后需要刷新几次才会显示真正删除
-除此之外，还建议去到文件夹domains将b.example.com/public_html上一个应用运行的残留的文件删掉
-最后将域名b.example.com重命名为a.example.com。
-  做完这些后，重新部署1-4。
+
+做完这些后，重新部署1-4。
 
 
 如果实在看不懂我说的文字版，需要去我上面推荐的油管频道看视频。
