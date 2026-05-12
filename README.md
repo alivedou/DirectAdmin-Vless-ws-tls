@@ -55,7 +55,9 @@ https://BestCF.pages.dev
 
 
   
-* 4：浏览器访问（  域名/UUID  ），可见节点链接地址，可选择将这个（  域名/UUID  ）直接导入到v2rayN新的订阅分组中，也可复制下面的订阅内容导入到2rayN已有分组。
+* 4：点击上面右边中间的open，然后在浏览器的地址栏加上你的UUID，点击回车即可见节点链接地址
+* 可选择复制浏览器地址栏的地址导入到v2rayN生成新的订阅分组中
+* 也可复制下面的订阅内容导入到2rayN已有分组。
   
 * 5：重新部署或报错后无法删除app的详细解决步骤：（ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
 <img width="1823" height="863" alt="image" src="https://github.com/user-attachments/assets/62239a7a-9438-405d-8ca6-c2b856ddedb4" />
