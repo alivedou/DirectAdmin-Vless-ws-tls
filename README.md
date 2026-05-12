@@ -65,7 +65,8 @@ CREATE APPLICATION
 * 4：浏览器访问（  域名/UUID  ），可见节点链接地址，可选择将这个（  域名/UUID  ）直接导入到v2rayN新的订阅分组中，也可复制下面的订阅内容导入到2rayN已有分组。
   
 * 5：重新部署或报错后无法删除app的详细解决步骤：（ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
-<img width="1823" height="863" alt="image" src="https://github.com/user-attachments/assets/b4b6e03d-61da-411a-8eba-1e97a36893b8" />
+<img width="1823" height="863" alt="image" src="https://github.com/user-attachments/assets/62239a7a-9438-405d-8ca6-c2b856ddedb4" />
+
 
 
 
