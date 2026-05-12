@@ -51,12 +51,13 @@ https://youtu.be/nXbSRIvLQhg?si=3i2G9K2KHnykrIwz
   
 * 4：浏览器访问（  域名/UUID  ），可见节点链接地址，可选择将这个（  域名/UUID  ）直接导入到v2rayN新的订阅分组中，也可复制下面的订阅内容导入到2rayN已有分组。
   
-* 5：报错后无法删除app的详细解决步骤：（ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
-  先将原域名a.example.com重命名为b.example
-  然后在文件夹管理里面根目录找到venv/domains，删除里面原有的名为a.example.com的文件夹，
-  再返回附件里面的nodejs删除刚才部署的application应用，点击删除后需要刷新几次才会显示真正删除，
-  除此之外，还建议去到文件夹domains将b.example.com/public_html上一个应用运行的残留的文件删掉，
-  最后重新将域名b.example.com改回a.example.com。
+* 5：报错后无法删除app的详细解决步骤：
+* （ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
+先将原域名a.example.com重命名为b.example
+然后在文件夹管理里面根目录找到venv/domains，删除里面原有的名为a.example.com的文件夹，
+再返回附件里面的nodejs删除刚才部署的application应用，点击删除后需要刷新几次才会显示真正删除
+除此之外，还建议去到文件夹domains将b.example.com/public_html上一个应用运行的残留的文件删掉
+最后将域名b.example.com重命名为a.example.com。
   做完这些后，重新部署1-4。
 
 
