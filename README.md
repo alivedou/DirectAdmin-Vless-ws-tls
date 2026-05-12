@@ -58,7 +58,7 @@ https://BestCF.pages.dev
 如果默认数量不够，可按相同格式自行继续添加。
 
   
-  ps：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在https://BestCF.pages.dev 也可以找到。
+  PS：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在https://BestCF.pages.dev 也可以找到。
 
 * 3：返回进入面板主页--附加功能--Setup Node.js APP
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/cd0e850c-364c-4719-bf74-969412af4c58" />
@@ -66,10 +66,10 @@ https://BestCF.pages.dev
 
   
 * 4：点击上面右边中间的open，然后在浏览器的地址栏加上你的UUID，点击回车即可见节点链接地址
-* 可选择复制浏览器地址栏的地址导入到v2rayN生成新的订阅分组中
-* 也可复制下面的订阅内容导入到2rayN已有分组。
+* 可选择复制浏览器地址栏的地址导入到V2rayN生成新的订阅分组中
+* 也可复制下面的订阅内容导入到V2rayN已有分组。
   
-* 5：重新部署或报错后无法删除app的详细解决步骤：（ps:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
+* 5：重新部署或报错后无法删除app的详细解决步骤：（PS:a.example是你设置的域名，b.example为任意域名，例如ab.cc）
 <img width="1823" height="863" alt="image" src="https://github.com/user-attachments/assets/62239a7a-9438-405d-8ca6-c2b856ddedb4" />
 
 
