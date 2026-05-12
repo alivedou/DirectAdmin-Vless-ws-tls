@@ -48,25 +48,19 @@ https://BestCF.pages.dev
   ps：如果可以的话，编辑后的index.js文件内容可以用js混淆，混淆网站地址在上面的网页链接也可以找到。
 
 * 3：返回进入面板主页--附加功能--Setup Node.js APP
-  点击右上角选择创建应用，版本用官方推荐的22.x.x。
-   
-     *输入：
+ 版本：22.x.x
+模式：Production
 
-  路径：public_html
+路径：public_html
+文件：index.js
 
-  文件：index.js
+按钮顺序：
+CREATE APPLICATION
+→ Run NPM Install
+→ Run JS script
+→ Start
+→ Run JS script
 
-     *然后分别点击：
-
-  CREATE APPLICATION
-
-  Run NPM Install
-
-  Run JS script
-
-  start
-
-  Run JS script
   
 * 4：浏览器访问（  域名/UUID  ），可见节点链接地址，可选择将这个（  域名/UUID  ）直接导入到v2rayN新的订阅分组中，也可复制下面的订阅内容导入到2rayN已有分组。
   
@@ -83,7 +77,9 @@ https://BestCF.pages.dev
   
 保活需要cloudflare创建一个以hello word 为模板的pages，并将vless-alive的代码复制到pages的代码编辑中，需要修改域名加uuid，并且在设置里添加触发事件：设置每30分钟触发一次。
   * 2.用AI生成一个html文件，替换domain/a.example.com/public_html文件夹下的html文件用来展示网站首页。
-提示词示例如下:
+  
+**提示词示例如下:**
+
 帮我生成一个完整的单文件 HTML 网站（包含 HTML、CSS 和少量 JavaScript），网站面向意大利用户，所有文字内容必须使用意大利语。
 网站主题为“保护水资源”。要求页面整体风格现代简洁环保主题，内容包含主题相关的多个图片和文章。
 
